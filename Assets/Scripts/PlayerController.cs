@@ -1,14 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : NetworkBehaviour
 {
     [SerializeField] private CharacterController characterController;
     [SerializeField] private GameObject playerCamera;
+    [SerializeField] private PlayerInput inputComponent;
     [SerializeField] private Animator animator;
     [SerializeField] private float gravity = -9.8f;
     [SerializeField] private float speed = 2.0f;
@@ -22,8 +24,15 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        if (IsOwner)
+        {
+            playerCamera.SetActive(true);
+            playerCamera.tag = "MainCamera";
+            inputComponent.enabled = true;
+        }
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        
     }
 
     private void Update()
