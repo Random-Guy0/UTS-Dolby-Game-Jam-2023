@@ -23,6 +23,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hunter
       objectReference: {fileID: 0}
+    - target: {fileID: 5353733128458726623, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
+      propertyPath: m_TagString
+      value: Hunter
+      objectReference: {fileID: 0}
     - target: {fileID: 5353733128458726624, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -70,3 +74,20 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5353733128458726626, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
+--- !u!1 &1000174078633553796 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5353733128458726623, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
+  m_PrefabInstance: {fileID: 5164805153534264155}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9159291245353967060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000174078633553796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21fc953710d32fd45ba550f60da2cde4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

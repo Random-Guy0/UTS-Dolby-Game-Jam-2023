@@ -1,7 +1,5 @@
-﻿namespace DefaultNamespace
+﻿public enum Teams
 {
-    public enum Teams
-    {
-        
-    }
+    Survivor,
+    Hunter
 }

@@ -217,11 +217,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!95 &1217954088 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3074737316858116799, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
-  m_PrefabInstance: {fileID: 5353733128351104385}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1974078620
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,54 +322,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5353733128458726622, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1217954088}
-    - target: {fileID: 5353733128458726622, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
-      propertyPath: FootstepAudioClips.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5353733128458726622, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
-      propertyPath: FootstepAudioClips.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 72f526a6a9890f643a88e85a61c86c8a, type: 3}
-    - target: {fileID: 5353733128458726622, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
-      propertyPath: FootstepAudioClips.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 85016e0f2b01da248b9663dd49a161b0, type: 3}
-    - target: {fileID: 5353733128458726622, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
-      propertyPath: FootstepAudioClips.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 186de84b3207156479abe98f4958fed0, type: 3}
-    - target: {fileID: 5353733128458726622, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
-      propertyPath: FootstepAudioClips.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: 1a91fcd19acf1e54bba0945d9f390849, type: 3}
-    - target: {fileID: 5353733128458726622, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
-      propertyPath: FootstepAudioClips.Array.data[4]
-      value: 
-      objectReference: {fileID: 8300000, guid: 14e8a8d2158bec840b56c54f5266e692, type: 3}
-    - target: {fileID: 5353733128458726622, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
-      propertyPath: FootstepAudioClips.Array.data[5]
-      value: 
-      objectReference: {fileID: 8300000, guid: 29841e7d5bbfb5b419c9ad16ca8bc4c1, type: 3}
-    - target: {fileID: 5353733128458726622, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
-      propertyPath: FootstepAudioClips.Array.data[6]
-      value: 
-      objectReference: {fileID: 8300000, guid: dd1af302b8902684d9381de1f2d3a5af, type: 3}
-    - target: {fileID: 5353733128458726622, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
-      propertyPath: FootstepAudioClips.Array.data[7]
-      value: 
-      objectReference: {fileID: 8300000, guid: 67c8b33e424ccdc4486edf538ab91c5a, type: 3}
-    - target: {fileID: 5353733128458726622, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
-      propertyPath: FootstepAudioClips.Array.data[8]
-      value: 
-      objectReference: {fileID: 8300000, guid: 274649b0e221539409070ebf6c18918b, type: 3}
-    - target: {fileID: 5353733128458726622, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
-      propertyPath: FootstepAudioClips.Array.data[9]
-      value: 
-      objectReference: {fileID: 8300000, guid: a3194b8bbc96ef84fab1f98f4b7dae3e, type: 3}
     - target: {fileID: 5353733128458726623, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
       propertyPath: m_Name
       value: Player
@@ -422,14 +369,6 @@ PrefabInstance:
     - target: {fileID: 5353733128458726624, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5353733128458726625, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
-      propertyPath: m_Height
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5353733128458726625, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
-      propertyPath: m_Center.y
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
