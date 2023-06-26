@@ -30,8 +30,8 @@ public class PlayerController : NetworkBehaviour
             playerCamera.tag = "MainCamera";
             inputComponent.enabled = true;
         }
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
         
     }
 
