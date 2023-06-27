@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DolbyIO.Comms.Unity;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -32,6 +33,8 @@ public class PlayerController : NetworkBehaviour
             playerCamera.tag = "MainCamera";
             inputComponent.enabled = true;
             UI.SetActive(true);
+
+            FindObjectOfType<DolbyIOManager>().AudioListener = playerCamera.GetComponent<AudioListener>();
         }
         //Cursor.lockState = CursorLockMode.Locked;
         //Cursor.visible = false;
