@@ -9,6 +9,7 @@ using Random = UnityEngine.Random;
 public class GameManager : NetworkBehaviour
 {
     [SerializeField] private GameObject hunterPrefab;
+    [SerializeField] private GameObject ghostPrefab;
     
     public static GameManager Instance { get; private set; }
 
@@ -37,5 +38,18 @@ public class GameManager : NetworkBehaviour
 
         GameObject hunterGameObject = Instantiate(hunterPrefab, Vector3.zero, Quaternion.identity);
         hunterGameObject.GetComponent<NetworkObject>().SpawnAsPlayerObject(hunterID, true);
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void PlayerDeathServerRpc(ulong clientID)
+    {
+        NetworkSpawnManager spawnManager = NetworkManager.Singleton.SpawnManager;
+        NetworkObject currentPlayerObject = spawnManager.GetPlayerNetworkObject(clientID);
+        Vector3 position = currentPlayerObject.transform.position;
+        Quaternion rotation = currentPlayerObject.transform.rotation;
+        currentPlayerObject.Despawn();
+
+        GameObject ghostGameObject = Instantiate(ghostPrefab, position, rotation);
+        ghostGameObject.GetComponent<NetworkObject>().SpawnAsPlayerObject(clientID, true);
     }
 }

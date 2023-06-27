@@ -188,6 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hunterPrefab: {fileID: 1000174078633553796, guid: 214769b2480a62542a17d2f6fefa2fb2, type: 3}
+  ghostPrefab: {fileID: 6198746958633986968, guid: 85782d5558f80434998cc6a7e08b60a4, type: 3}
 --- !u!1 &616194282
 GameObject:
   m_ObjectHideFlags: 0

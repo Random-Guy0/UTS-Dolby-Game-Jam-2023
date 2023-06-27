@@ -20,6 +20,7 @@ public class PlayerController : NetworkBehaviour
     [Range(0, 1)] public float FootstepAudioVolume = 0.3f;
     
     private Vector3 velocity;
+    private Vector2 input;
     private Vector2 mouseLook;
 
     private void Start()
@@ -43,9 +44,19 @@ public class PlayerController : NetworkBehaviour
 
     private void Move()
     {
+        Vector3 forwardVelocity = transform.forward * input.y;
+        Vector3 rightVelocity = transform.right * input.x;
+        
+        velocity = forwardVelocity + rightVelocity;
+        velocity *= speed;
+        
         if (characterController.isGrounded)
         {
-            animator.SetBool("Grounded", true);
+            if (animator.isActiveAndEnabled)
+            {
+                animator.SetBool("Grounded", true);
+            }
+
             if (velocity.y < 0f)
             {
                 velocity.y = 0f;
@@ -54,9 +65,12 @@ public class PlayerController : NetworkBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
-        
-        animator.SetFloat("MotionSpeed", velocity.magnitude);
-        animator.SetFloat("Speed", speed);
+
+        if (animator.isActiveAndEnabled)
+        {
+            animator.SetFloat("MotionSpeed", velocity.magnitude);
+            animator.SetFloat("Speed", speed);
+        }
     }
 
     private void Look()
@@ -81,19 +95,14 @@ public class PlayerController : NetworkBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        Vector2 input = context.ReadValue<Vector2>();
-        Vector3 forwardVelocity = transform.forward * input.y;
-        Vector3 rightVelocity = transform.right * input.x;
-        
-        velocity = forwardVelocity + rightVelocity;
-        velocity *= speed;
+        input = context.ReadValue<Vector2>();
     }
 
     public void OnLook(InputAction.CallbackContext context)
     {
-        Vector2 input = context.ReadValue<Vector2>();
-        mouseLook.x = input.x * lookSensitivity;
-        mouseLook.y = -input.y * lookSensitivity;
+        Vector2 lookInput = context.ReadValue<Vector2>();
+        mouseLook.x = lookInput.x * lookSensitivity;
+        mouseLook.y = -lookInput.y * lookSensitivity;
     }
     
     public void OnFootstep(AnimationEvent animationEvent)
