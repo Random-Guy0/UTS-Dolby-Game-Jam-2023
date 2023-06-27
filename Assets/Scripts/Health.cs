@@ -12,6 +12,8 @@ public class Health : NetworkBehaviour
     [SerializeField] private float invincibleTime = 10f;
     private NetworkVariable<bool> invincible = new NetworkVariable<bool>();
 
+    [SerializeField] private GameObject[] heartIndicators;
+
     private void Start()
     {
         if (IsServer)
@@ -26,7 +28,7 @@ public class Health : NetworkBehaviour
         if (!invincible.Value)
         {
             health.Value--;
-
+            UpdateHeartDisplayClientRpc();
             if (health.Value <= 0)
             {
                 health.Value = 0;
@@ -54,6 +56,15 @@ public class Health : NetworkBehaviour
         {
             ulong clientID = NetworkManager.Singleton.LocalClientId;
             GameManager.Instance.PlayerDeathServerRpc(clientID);
+        }
+    }
+
+    [ClientRpc]
+    private void UpdateHeartDisplayClientRpc()
+    {
+        if (IsOwner)
+        {
+            heartIndicators[health.Value].SetActive(false);
         }
     }
 

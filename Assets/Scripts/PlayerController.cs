@@ -12,6 +12,7 @@ public class PlayerController : NetworkBehaviour
     [SerializeField] private GameObject playerCamera;
     [SerializeField] private PlayerInput inputComponent;
     [SerializeField] private Animator animator;
+    [SerializeField] private GameObject UI;
     [SerializeField] private float gravity = -9.8f;
     [SerializeField] private float speed = 2.0f;
     [SerializeField] private float lookSensitivity = 1.0f;
@@ -30,6 +31,7 @@ public class PlayerController : NetworkBehaviour
             playerCamera.SetActive(true);
             playerCamera.tag = "MainCamera";
             inputComponent.enabled = true;
+            UI.SetActive(true);
         }
         //Cursor.lockState = CursorLockMode.Locked;
         //Cursor.visible = false;
@@ -46,9 +48,11 @@ public class PlayerController : NetworkBehaviour
     {
         Vector3 forwardVelocity = transform.forward * input.y;
         Vector3 rightVelocity = transform.right * input.x;
-        
+
+        float currentY = velocity.y;
         velocity = forwardVelocity + rightVelocity;
         velocity *= speed;
+        velocity.y = currentY;
         
         if (characterController.isGrounded)
         {
