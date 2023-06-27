@@ -1,46 +1,69 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public class Health : NetworkBehaviour
 {
     [SerializeField] private int maxHealth = 3;
-    private int health;
+    private NetworkVariable<int> health = new NetworkVariable<int>();
 
     [SerializeField] private float invincibleTime = 10f;
-    private bool invincible = false;
+    private NetworkVariable<bool> invincible = new NetworkVariable<bool>();
 
     private void Start()
     {
-        health = maxHealth;
+        if (IsServer)
+        {
+            health.Value = maxHealth;
+            invincible.Value = false;
+        }
     }
 
     public void TakeDamage()
     {
-        if (!invincible)
+        if (!invincible.Value)
         {
-            health--;
-            if (health <= 0)
+            health.Value--;
+
+            if (health.Value <= 0)
             {
+                health.Value = 0;
                 Die();
             }
             else
             {
-                StartCoroutine(ActivateInvincibleTime());
+                if (IsServer)
+                {
+                    StartCoroutine(ActivateInvincibleTime());
+                }
             }
         }
     }
 
     private void Die()
     {
-        
+        DieClientRpc();
+    }
+    
+    [ClientRpc]
+    private void DieClientRpc()
+    {
+        if (IsOwner)
+        {
+            ulong clientID = NetworkManager.Singleton.LocalClientId;
+            GameManager.Instance.PlayerDeathServerRpc(clientID);
+        }
     }
 
     private IEnumerator ActivateInvincibleTime()
     {
-        invincible = true;
-        yield return new WaitForSeconds(invincibleTime);
-        invincible = false;
+        if (!invincible.Value)
+        {
+            invincible.Value = true;
+            yield return new WaitForSeconds(invincibleTime);
+            invincible.Value = false;
+        }
     }
 }
