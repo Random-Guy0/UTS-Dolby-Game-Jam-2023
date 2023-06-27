@@ -25,7 +25,7 @@ public class NetworkUI : MonoBehaviour
         GameObject connectionInfoObject = new GameObject("ConnectionInfo");
         ConnectionInfo connectionInfo = connectionInfoObject.AddComponent<ConnectionInfo>();
         connectionInfo.SetConnectionInfo("", true);
-        SceneManager.LoadScene("PlayerScene");
+        SceneManager.LoadScene("3D View Dm");
     }
 
     private void StartClient()
@@ -33,7 +33,7 @@ public class NetworkUI : MonoBehaviour
         GameObject connectionInfoObject = new GameObject("ConnectionInfo");
         ConnectionInfo connectionInfo = connectionInfoObject.AddComponent<ConnectionInfo>();
         connectionInfo.SetConnectionInfo(ipField.text, false);
-        SceneManager.LoadScene("PlayerScene");
+        SceneManager.LoadScene("3D View Dm");
     }
 
     public void Quit()

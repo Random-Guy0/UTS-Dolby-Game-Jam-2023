@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -2226874406738925802}
   - component: {fileID: 7610671012180818714}
   - component: {fileID: 8897835266637742443}
+  - component: {fileID: 4131780080971100947}
   m_Layer: 0
   m_Name: DolbyComms
   m_TagString: Untagged
@@ -84,3 +85,17 @@ MonoBehaviour:
     _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
     _objectReferences:
     - {fileID: 11400000, guid: d871f12017ed38f4a8b22298e81726c8, type: 2}
+--- !u!114 &4131780080971100947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6921757513775057929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 136744cd1f22b4cba8c59b82c9540044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AppKey: 6i-Fpoyf9jeZ-AOUpR90hw==
+  AppSecret: 1DVQeWvCx7zVnaNSfH6iQAFG8kEQhuCbXPSzMc1Bnqw=
