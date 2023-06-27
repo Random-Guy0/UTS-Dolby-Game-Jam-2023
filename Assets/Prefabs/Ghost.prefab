@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: GlobalObjectIdHash
       value: 951099334
       objectReference: {fileID: 0}
+    - target: {fileID: 3019027645945527971, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5353733128458726622, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
       propertyPath: FootstepAudioClips.Array.size
       value: 0
@@ -63,7 +67,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6639135130234954089, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8050066646481662449, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8574947374810184319, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197742946005724774, guid: 28183951f7dd0d9498f73acb8dad1c4e, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
